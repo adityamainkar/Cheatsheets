@@ -7,3 +7,16 @@ It boils down to this: if you have multiple threads and you want them to be able
 you're looking for Queue.Queue; if you just want a queue or a double-ended queue as a datastructure, use collections.deque.
 
 Finally, accessing and manipulating the internal deque of a Queue.Queue is playing with fire - you really don't want to be doing that.
+
+
+(2) When list in initialized: 
+arr = [[0]*cols]*rows 
+arr[0][0] = 1
+Will make all first element of every row gets changed to 1 
+Python doesn’t create 5 integer objects but creates only one integer object and 
+all the indices of the array arr point to the same int object as shown.
+
+
+Following is correct way:
+arr = [[0 for i in range(cols)] for j in range(rows)] 
+arr[0][0] = 1
