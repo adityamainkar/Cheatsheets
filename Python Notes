@@ -46,3 +46,15 @@ sum = reduce((lambda x, y: x + y), li)
 print (sum)
 
 connections.sort(key = lambda x: x[2])
+
+(5)Python nonlocal Keyword:
+
+def myfunc1():
+    x = "John"
+    def myfunc2():
+        nonlocal x
+        x = "hello"
+    myfunc2() 
+    return x
+
+print(myfunc1()) -->hello
